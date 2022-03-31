@@ -10,10 +10,10 @@ app.get('/', (request, respond) => {
     respond.sendFile(path.join(__dirname, '/index.html'));
 });
 
-app.post('/sum', (request, respond) => {
-    console.log(request.body);
-    let a = request.body.a;
-    let b = request.body.b;
+app.get('/sum', (request, respond) => {
+    console.log(request.query);
+    let a = request.query['a'];
+    let b = request.query['b'];
     if (a == '') {
         a = 0;
     }
